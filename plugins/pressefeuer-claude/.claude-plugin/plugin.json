@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "pressefeuer",
+  "displayName": "Pressefeuer",
+  "version": "0.1.0",
+  "description": "Pressemitteilungen für pressefeuer.at in Claude Code entwerfen, überarbeiten, zur Kundenfreigabe senden und Veröffentlichungsberichte abrufen – über den offiziellen Pressefeuer-MCP-Server.",
+  "author": {
+    "name": "AdSimple GmbH",
+    "email": "office@pressefeuer.at",
+    "url": "https://pressefeuer.at"
+  },
+  "homepage": "https://pressefeuer.at/docs/agents/mcp",
+  "repository": "https://github.com/AdSimple-GmbH/pressefeuer-plugins",
+  "license": "MIT",
+  "keywords": ["pressemitteilung", "pr", "newsroom", "mcp", "pressefeuer"],
+  "icon": "./icon.svg",
+  "documentationUrl": "https://pressefeuer.at/docs/agents/mcp",
+  "supportUrl": "https://pressefeuer.at/contact",
+  "privacyPolicyUrl": "https://pressefeuer.at/datenschutz",
+  "termsOfServiceUrl": "https://pressefeuer.at/agb",
+  "userConfig": {
+    "api_key": {
+      "type": "string",
+      "title": "Pressefeuer-Agentur-Schlüssel (optional)",
+      "description": "Agentur-Schlüssel aus pressefeuer.at → Dashboard → Admin → Agent (Agency-Tarif). Wird im System-Schlüsselbund gespeichert und nur im Header X-API-Key an https://pressefeuer.at/api/mcp gesendet, nie in einer URL. Leer lassen, sobald die Anmeldung per Browser (OAuth) verfügbar ist.",
+      "sensitive": true
+    }
+  }
+}

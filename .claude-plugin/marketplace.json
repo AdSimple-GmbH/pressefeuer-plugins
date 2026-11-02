@@ -1,0 +1,17 @@
+{
+  "name": "pressefeuer",
+  "description": "Offizielle Claude-Code-Plugins von pressefeuer.at (AdSimple GmbH)",
+  "owner": {
+    "name": "AdSimple GmbH",
+    "email": "office@pressefeuer.at",
+    "url": "https://pressefeuer.at"
+  },
+  "plugins": [
+    {
+      "name": "pressefeuer",
+      "source": "./plugins/pressefeuer-claude",
+      "description": "Pressemitteilungen für pressefeuer.at entwerfen, zur Kundenfreigabe senden und Berichte abrufen",
+      "category": "productivity"
+    }
+  ]
+}

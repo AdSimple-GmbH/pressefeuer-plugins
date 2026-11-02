@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "pressefeuer": {
+      "type": "http",
+      "url": "https://pressefeuer.at/api/mcp",
+      "headers": {
+        "X-API-Key": "${user_config.api_key}"
+      }
+    }
+  }
+}

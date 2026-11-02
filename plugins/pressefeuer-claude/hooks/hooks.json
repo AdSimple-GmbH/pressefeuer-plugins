@@ -1,0 +1,17 @@
+{
+  "description": "Pressefeuer: Kundenmails, Veroeffentlichungen und Aenderungen an oeffentlichen SEO-Daten immer ausdruecklich bestaetigen lassen",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "^mcp__plugin_pressefeuer_pressefeuer__(publish_release|send_approval_request|generate_seo_metadata)$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"permissionDecision\":\"ask\",\"permissionDecisionReason\":\"Pressefeuer: Diese Aktion verschickt eine E-Mail an einen Kunden, veroeffentlicht eine Pressemitteilung oder aendert oeffentliche SEO-Daten. Bitte nur nach ausdruecklicher Bestaetigung ausfuehren.\"}}'",
+            "onFailure": "block"
+          }
+        ]
+      }
+    ]
+  }
+}
