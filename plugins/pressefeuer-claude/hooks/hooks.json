@@ -3,7 +3,7 @@
   "hooks": {
     "PreToolUse": [
       {
-        "matcher": "^mcp__plugin_pressefeuer_pressefeuer__(publish_release|send_approval_request|generate_seo_metadata)$",
+        "matcher": "^mcp__.*__(publish_release|send_approval_request|generate_seo_metadata)$",
         "hooks": [
           {
             "type": "command",

@@ -73,7 +73,9 @@ Alle Aufrufe sind auf die eigene Agentur beschränkt. Tarif-Freischaltung und Ra
   Kommentare aus Freigaben – gelangen in den Kontext von Claude. Die Skills behandeln sie als Daten,
   nicht als Anweisungen, und geben Freigabelinks nicht aus.
 - **Hook:** ein `PreToolUse`-Hook gibt vor `send_approval_request`, `publish_release` und
-  `generate_seo_metadata` per `echo` einen festen Text mit der Entscheidung „nachfragen" aus. Claude
+  `generate_seo_metadata` per `echo` einen festen Text mit der Entscheidung „nachfragen" aus – unabhängig
+  davon, wie die jeweilige Claude-Oberfläche den Server benennt, also auch bei gleichnamigen Werkzeugen
+  anderer Server. Claude
   Code fragt dann nach, sofern es Berechtigungsabfragen anzeigt; schlägt der Hook fehl, wird der
   Aufruf blockiert (`onFailure: block`). Der Hook liest keine Eingaben und sendet nichts. Wie jeder
   Plugin-Hook erhält sein Prozess die Plugin-Einstellungen als Umgebungsvariablen (u. a.
