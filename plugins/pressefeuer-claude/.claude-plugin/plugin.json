@@ -2,7 +2,7 @@
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "pressefeuer",
   "displayName": "Pressefeuer",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Pressemitteilungen für pressefeuer.at in Claude Code entwerfen, überarbeiten, zur Kundenfreigabe senden und Veröffentlichungsberichte abrufen – über den offiziellen Pressefeuer-MCP-Server.",
   "author": {
     "name": "AdSimple GmbH",
@@ -14,10 +14,6 @@
   "license": "MIT",
   "keywords": ["pressemitteilung", "pr", "newsroom", "mcp", "pressefeuer"],
   "icon": "./icon.svg",
-  "documentationUrl": "https://pressefeuer.at/docs/agents/mcp",
-  "supportUrl": "https://pressefeuer.at/contact",
-  "privacyPolicyUrl": "https://pressefeuer.at/datenschutz",
-  "termsOfServiceUrl": "https://pressefeuer.at/agb",
   "userConfig": {
     "api_key": {
       "type": "string",
