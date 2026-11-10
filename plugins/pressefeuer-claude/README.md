@@ -72,15 +72,15 @@ Alle Aufrufe sind auf die eigene Agentur beschränkt. Tarif-Freischaltung und Ra
 - **Daten im Kontext:** Werkzeugergebnisse – etwa Entwurfstexte, Kundennamen, E-Mail-Adressen und
   Kommentare aus Freigaben – gelangen in den Kontext von Claude. Die Skills behandeln sie als Daten,
   nicht als Anweisungen, und geben Freigabelinks nicht aus.
-- **Hook:** ein `PreToolUse`-Hook gibt vor `send_approval_request`, `publish_release` und
-  `generate_seo_metadata` per `echo` einen festen Text mit der Entscheidung „nachfragen" aus – unabhängig
-  davon, wie die jeweilige Claude-Oberfläche den Server benennt, also auch bei gleichnamigen Werkzeugen
-  anderer Server. Claude
-  Code fragt dann nach, sofern es Berechtigungsabfragen anzeigt; schlägt der Hook fehl, wird der
-  Aufruf blockiert (`onFailure: block`). Der Hook liest keine Eingaben und sendet nichts. Wie jeder
-  Plugin-Hook erhält sein Prozess die Plugin-Einstellungen als Umgebungsvariablen (u. a.
-  `CLAUDE_PLUGIN_OPTION_API_KEY`); der Befehl verwendet sie nicht.
-- **Keine** Skripte, Pakete, Downloads oder lokalen Server.
+- **Rückfrage:** das Plugin enthält keinen Hook. Der Pressefeuer-Server kennzeichnet
+  `send_approval_request`, `publish_release` und `generate_seo_metadata` in seiner Werkzeugliste als
+  bestätigungspflichtig (`anthropic/requiresUserInteraction`). Claude Code zeigt vor jedem dieser
+  Aufrufe die Berechtigungsabfrage – in jedem Berechtigungsmodus, auch wenn eine Erlauben-Regel
+  passt, und ohne die Option „nicht mehr fragen". Kann Claude Code nicht nachfragen (etwa im
+  Modus `dontAsk` oder in unbeaufsichtigten Läufen), wird der Aufruf abgelehnt. Die Kennzeichnung
+  ist ein Hinweis an Claude Code; der Server erzwingt die Rückfrage nicht, und andere MCP-Clients
+  beachten sie nicht.
+- **Keine** Hooks, Skripte, Pakete, Downloads oder lokalen Server.
 
 ## Datenschutz und Support
 
